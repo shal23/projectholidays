@@ -6,6 +6,7 @@
     <th>Company name</th>
     <th>Company address</th>
     <th>Company url</th>
+    <th>About</th>
     <th>Image</th>
     <th></th>
     <th></th>
@@ -18,6 +19,7 @@
     <td><%= agent_profile.company_name %></td>
     <td><%= agent_profile.company_address %></td>
     <td><%= agent_profile.company_url %></td>
+    <td><%= truncate(agent_profile.about) %></td>
     <td><%= agent_profile.image %></td>
     <td><%= link_to 'Show', agent_profile %></td>
     <td><%= link_to 'Edit', edit_agent_profile_path(agent_profile) %></td>
