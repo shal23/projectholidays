@@ -52,10 +52,15 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  uploader = AvatarUploader.new
+  def extension_white_list
+    %w(jpg jpeg png)
+  end
 
-  uploader.store!(my_file)
 
-  uploader.retrieve_from_store!('my_file.png')
+ # uploader = AvatarUploader.new
+
+ # uploader.store!(my_file)
+
+ # uploader.retrieve_from_store!('my_file.png')
 
 end
