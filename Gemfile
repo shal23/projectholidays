@@ -31,3 +31,4 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'truncate_html'
 gem 'carrierwave'
 gem "jquery-fileupload-rails"
+gem 'event-calendar', :require => 'event_calendar'

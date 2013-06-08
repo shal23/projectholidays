@@ -70,6 +70,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.2)
     erubis (2.7.0)
+    event-calendar (2.3.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -221,6 +222,7 @@ DEPENDENCIES
   devise (>= 2.2.3)
   devise_invitable (>= 1.1.5)
   email_spec (>= 1.4.0)
+  event-calendar
   factory_girl_rails (>= 4.2.0)
   guard-bundler (>= 1.0.0)
   guard-rails (>= 0.4.0)
