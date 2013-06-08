@@ -1,0 +1,37 @@
+<br>
+<br>
+<h3>Listing events</h3>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Start at</th>
+    <th>End at</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.start_at %></td>
+    <td><%= event.end_at %></td>
+    <td><%= truncate(event.description) %></td>
+    <td><%= event.created_at.strftime("%e, %b, %Y") %></td>
+    <!--<td><%= link_to 'Show', event %></td>-->
+
+     <% if user_signed_in? %>
+      <% if current_user.has_role? :travel_agent, :admin %>
+        <%= link_to 'Edit an Event', edit_event_path(event), :class => "btn btn-success", :style => "color:white;" %>
+        <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Create a new Event', new_event_path, :class => "btn btn-success" %>
+
+      <% end %>
+    <% end %>
+<% end %>
+</table>
+
+<br />
+

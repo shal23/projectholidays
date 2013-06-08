@@ -32,3 +32,4 @@ gem 'truncate_html'
 gem 'carrierwave'
 gem "jquery-fileupload-rails"
 gem 'event-calendar', :require => 'event_calendar'
+gem 'tinymce-rails'

@@ -1,0 +1,26 @@
+<%= simple_form_for @event do |f| %>
+
+ <% if @event.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@event.errors.count, "error") %> prohibited
+        this event from being saved:</h2>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <% if user_signed_in? %>
+  <% if current_user.has_role? :travel_agent %>
+    <%= link_to 'Create an Event', new_event_path, :class => "btn btn-success", :style => "color:white;" %>
+  <% end %>
+<% end %>
+
+<%= f.input :name %>
+<%= f.input :start_at, :as => :date %>
+<%= f.input :end_at, :as => :date %>
+<%= f.input :description, :input_html => { :rows => 3 } %>
+<%= f.submit :class => "btn btn-success", :style => "color:white;" %>
+<% end %>

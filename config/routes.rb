@@ -1,24 +1,26 @@
 Projectholidays::Application.routes.draw do
+
+ # get "events/index"
+
+ 
+ resources :events
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
-  match map.calendar_day "/calendar/:year/:month/:day", :controller => "calendar", :action => "day"
+  match 'map.calendar_day "/calendar/:year/:month/:day", :controller => "calendar", :action => "day" '
 
   resources :agent_profiles
 
-
   resources :enquiries
-
 
   resources :deals
 
-
-  resources :comments
-
-
-  resources :posts
+  resources :posts do 
+    resources :comments
+  end
 
 
-  get "blog/index"
+  get "blog/index",:id => "blog"
+  match "blog" => "blog#index"
 
   get "admin/index"
 

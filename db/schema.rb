@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608090115) do
+ActiveRecord::Schema.define(:version => 20130608132301) do
 
   create_table "agent_profiles", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130608090115) do
     t.string   "image"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.text     "about"
   end
 
   create_table "comments", :force => true do |t|
@@ -49,6 +50,15 @@ ActiveRecord::Schema.define(:version => 20130608090115) do
     t.boolean  "join_mailing_list"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.text     "description"
   end
 
   create_table "posts", :force => true do |t|
@@ -95,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20130608090115) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.string   "avatar"
+    t.boolean  "agent"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

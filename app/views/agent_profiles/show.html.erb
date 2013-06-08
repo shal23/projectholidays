@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@user_profile.image_url) if @user_profile.image? %>
+
 <p>
   <b>Name:</b>
   <%= @agent_profile.name %>
