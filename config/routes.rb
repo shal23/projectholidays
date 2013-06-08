@@ -1,4 +1,7 @@
 Projectholidays::Application.routes.draw do
+  resources :enquiries
+
+
   resources :deals
 
 
