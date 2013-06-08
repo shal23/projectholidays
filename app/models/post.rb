@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+	self.per_page = 5
 
  	belongs_to :user
   	attr_accessible :content, :name, :title
