@@ -1,4 +1,7 @@
 Projectholidays::Application.routes.draw do
+  resources :agent_profiles
+
+
   resources :enquiries
 
 

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608021256) do
+ActiveRecord::Schema.define(:version => 20130608090115) do
+
+  create_table "agent_profiles", :force => true do |t|
+    t.string   "name"
+    t.string   "company_name"
+    t.string   "company_address"
+    t.string   "company_url"
+    t.string   "image"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "name"

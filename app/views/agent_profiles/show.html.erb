@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @agent_profile.name %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @agent_profile.company_name %>
+</p>
+
+<p>
+  <b>Company address:</b>
+  <%= @agent_profile.company_address %>
+</p>
+
+<p>
+  <b>Company url:</b>
+  <%= @agent_profile.company_url %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @agent_profile.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_agent_profile_path(@agent_profile) %> |
+<%= link_to 'Back', agent_profiles_path %>
