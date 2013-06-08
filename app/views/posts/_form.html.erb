@@ -1,10 +1,20 @@
 <%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
+  <% if @post.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
 
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :title %>
-    <%= f.input :content %>
+    <%= f.input :content, :input_html => { :rows => 3, :class => "tinymce" }  %>
   </div>
 
   <div class="form-actions">
