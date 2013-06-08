@@ -1,4 +1,91 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<br>
+<br>
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+                <%= image_tag "chittrakoot_falls.jpg" %>
+                <div class="carousel-caption">
+                    <h5>Falls</h5>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag "gulmarg.jpg" %>
+                 <div class="carousel-caption">
+                    <h5>Skiing</h5>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag "kutch.jpg" %>
+                 <div class="carousel-caption">
+                    <h5>Village</h5>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag "ladakh_nubra.jpg" %>
+                 <div class="carousel-caption">
+                    <h5>Valley</h5>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag "taj-mahal.jpg" %>
+                 <div class="carousel-caption">
+                    <h5>Taj Mahal</h5>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag "sea_link.jpg" %>
+                 <div class="carousel-caption">
+                    <h5>Sea Link, Mumbai</h5>
+                </div>
+            </div>
+
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+
+    <br>
+<hr>
+<br>
+<center><h3><b>Upcoming Events</b></h3></center>
+<br>
+<table class = "table table-striped">
+<% @events.each do |event| %>
+
+ <h6><%= event.name %></h6>
+    
+    <hr>
+    <p><%= truncate_html event.description.to_s.html_safe, :length => 20 %>...
+    <%= link_to "Read more", event_path(event) %></p>
+  <br>
+</table>
+
+<% end %>
+<br>
+<hr>
+<br>
+<center><h3><b>Special Offers</b></h3></center>
+<br>
+<table class="table table-striped">
+
+    <% @deals.each do |deal| %>
+
+    <h6><%= deal.title %></h6>
+
+        <hr>
+        <p><%= truncate_html deal.description.html_safe, :length => 20 %>...
+            <%= link_to "Read more", deal_path(deal) %></p>
+
+</table>
+
 <% end %>
