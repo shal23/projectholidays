@@ -1,4 +1,17 @@
 Projectholidays::Application.routes.draw do
+  resources :deals
+
+
+  resources :comments
+
+
+  resources :posts
+
+
+  get "blog/index"
+
+  get "admin/index"
+
   authenticated :user do
     root :to => 'home#index'
   end
