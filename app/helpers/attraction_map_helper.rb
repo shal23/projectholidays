@@ -1,0 +1,2 @@
+module AttractionMapHelper
+end

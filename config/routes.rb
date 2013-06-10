@@ -1,5 +1,7 @@
 Projectholidays::Application.routes.draw do
 
+  get "attraction_map/index"
+
   resources :attractions
 
 
