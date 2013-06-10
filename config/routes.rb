@@ -1,5 +1,11 @@
 Projectholidays::Application.routes.draw do
 
+  resources :attractions
+
+
+  get "about/index"
+  match "about" => "about#index"
+
  # get "events/index"
 
  

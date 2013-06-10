@@ -1,10 +1,9 @@
-<h1>Listing comments</h1>
+<h3>Comments</h3>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Content</th>
-    <th>Post</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,14 +13,13 @@
   <tr>
     <td><%= comment.name %></td>
     <td><%= truncate(comment.content) %></td>
-    <td><%= comment.post %></td>
     <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_comment_path(comment), :class => "btn btn-info" %></td>
+    <td><%= link_to 'Delete', :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Comment', new_comment_path, :class => "btn btn-success", :style => "color:white;" %>
+<%= link_to 'Submit', new_comment_path, :class => "btn btn-success", :style => "color:white;" %>
