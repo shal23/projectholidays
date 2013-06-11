@@ -26,23 +26,22 @@
         </li>-->
         <li></i><%= link_to "<i class='icon-pencil'></i>".html_safe, new_enquiry_path, :alt => "Pencil", :title => "Contact", :class => "nav_icon" %></li>
 
-     
-        
-        <!--<li>
-          <%= link_to "Deals", deals_path %>
-        </li>-->
+        <li><%= link_to "Events", events_path %></li> 
+
          <li></i><%= link_to "<i class='icon-heart'></i>".html_safe, deals_path, :alt => "Heart", :title => "Deals", :class => "nav_icon" %></li>
       <% end %>
       <% if user_signed_in? %>
         <li>
         <%= link_to 'Edit account', edit_user_registration_path %>
         </li>
+        <% end %>
+
         <% if current_user.has_role? :admin %>
           <li>
           <%= link_to 'Admin', users_path %>
           </li>
         <% end %>
       <% else %>
-      <% end %>
+    
     </ul>
   </div>

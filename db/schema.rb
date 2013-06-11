@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610140731) do
+ActiveRecord::Schema.define(:version => 20130611023555) do
 
   create_table "agent_profiles", :force => true do |t|
     t.string   "name"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20130610140731) do
     t.string   "invited_by_type"
     t.string   "avatar"
     t.boolean  "agent"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

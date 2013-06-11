@@ -1,19 +1,32 @@
 <br>
 <br>
-<h3>Listing events</h3>
-
+<center><%= image_tag "formula-1-racing.jpg" %></center>
+<br>
+<hr>
+<br>
+<h4>Special Events</h4>
+<br>
+<br>
 <% @events.each do |event| %>
 
   <div class="container">
     <div class="span12">
       <div class="row">
         <b><%= event.name %></b>
+        <br>
+        <br>
         <%= event.start_at %>
-        <%= event.end_at %>
-        <%= truncate(event.description) %>
+        <br>
+        <br>
+        <!--<%= event.end_at %>-->
+        <%= event.description %>
+        <br>
+        <br>
         <%= event.created_at.strftime("%e, %b, %Y") %>
+      <hr>
       </div>
     </div>
   </div>
 <% end %>
 
+<%= link_to 'Create an Event', new_event_path, :class => "btn btn-success", :style => "color:white;" %>
