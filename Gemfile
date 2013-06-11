@@ -36,3 +36,4 @@ gem 'tinymce-rails'
 gem 'will_paginate', '~> 3.0'
 gem "friendly_id"
 gem "gmaps4rails"
+gem 'country_select' 

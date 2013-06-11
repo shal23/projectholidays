@@ -10,6 +10,7 @@
     <link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
           <div class="container">
@@ -29,15 +30,16 @@
                 <div class="span12">
                   <%= render 'layouts/messages' %>
                   <%= yield %>
+               
                 </div>
               </div>
               <footer>
-                <% yield :scripts %>
+                    <%= yield :scripts %>
               </footer>
             
           </div> <!--! end of .container -->
         </div> <!--! end of #main -->
-        
+       
 <%= tinymce %>
   </body>
 </html>

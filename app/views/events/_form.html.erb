@@ -13,7 +13,7 @@
   <% end %>
 
   <% if user_signed_in? %>
-  <% if current_user.has_role? :travel_agent %>
+  <% if current_user.has_role? :travel_agent, :admin %>
     <%= link_to 'Create an Event', new_event_path, :class => "btn btn-success", :style => "color:white;" %>
   <% end %>
 <% end %>
