@@ -14,10 +14,13 @@
   <%= @event.start_at %>
 </p>
 
-<!--<p>
-  <b>End at:</b>
-  <%= @event.end_at %>
-</p>-->
+<p>
+  <b>Address:</b>
+  <%= @event.address %>
+  <%= @event.longitude %><%= @event.latitude %>
+ </p>
+
+<%= gmaps4rails(@json) %>
 
 <p>
   <b>Description:</b>

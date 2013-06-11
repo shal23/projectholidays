@@ -12,13 +12,10 @@
   </div>
   <% end %>
 
-  <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :url %>
-    <%= f.input :description %>
-  </div>
+    <%= f.input :description %>  
+    <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
 <% end %>
+

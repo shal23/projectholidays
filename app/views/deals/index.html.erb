@@ -1,6 +1,6 @@
-<h3>Listing deals</h3>
+<h3>Deals</h3>
 
-<table class="table table-condensed">
+<table class="table table-striped">
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -16,18 +16,11 @@
     <td><%= deal.description %></td>
     <td><%= deal.url %></td>
     <!--<td><%= link_to 'Show', deal %></td>-->
+   
 
-    <% if user_signed_in? %>
-      <% if current_user.has_role? :travel_agent, :admin %>
-        <%= link_to 'Edit a Deal', edit_deal_path(deal), :class => "btn btn-success", :style => "color:white;" %>
-        <%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %>
-
-      <% end %>
-    <% end %>
 <% end %>
 </table>
 
 <br />
-
+ <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %>
 
