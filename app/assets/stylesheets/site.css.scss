@@ -158,19 +158,19 @@
 }
 
 .carousel-caption {
-  position: absolute;
+  position: static;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 15px;
   background: white;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.90);
 }
 
 .carousel-caption h5,
 .carousel-caption p {
   line-height: 21px;
-  color: black;
+  color: white;
 }
 
 .carousel-caption h5 {
@@ -263,7 +263,7 @@ p {
 
 body { 
   
-  background-image: none;
+  background-image: url(kindajean.png);
   background-repeat: repeat;
 
   font-family: 'Special Elite', 'Roboto Slab', 'Noto Serif', serif, times;

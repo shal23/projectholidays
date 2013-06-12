@@ -1,16 +1,14 @@
 <%= simple_form_for(@agent_profile) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  
     <%= f.input :name %>
     <%= f.input :company_name %>
     <%= f.input :company_address %>
     <%= f.input :company_url %>
     <%= f.input :image, :as => :file %>
     <%= f.input :about %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
+
 <% end %>
