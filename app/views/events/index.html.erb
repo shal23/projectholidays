@@ -45,20 +45,12 @@
     </div>
   </div>
   <br>
-  <% if user_signed_in? %>
-    <% if current_user.has_role? :agent, :admin %>
-      <td><%= link_to 'Destroy',event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <br>
-      <hr>
-      <br>
-    </tr>
-    <% end %>
-  <% end %>
+
 <br>
 <br>
 
 <% if user_signed_in? %>
-      <% if current_user.has_role? :agent, :admin %>
+      <% if current_user.has_role? :agent %>
         <%= link_to 'Edit an Event', edit_event_path(event), :class => "btn btn-success", :style => "color:white;" %>
         <%= link_to 'Create an Event', new_event_path, :class => "btn btn-success", :style => "color:white;" %>
 

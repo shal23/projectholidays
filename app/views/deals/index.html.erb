@@ -4,8 +4,6 @@
 
 <center><%= image_tag "taj_mahal.jpg", :class => "img-polaroid" %></center>
 <br>
-<br>
-
 <table class="table table-striped">
   <tr>
     <th>Title</th>
@@ -15,19 +13,16 @@
     <th></th>
     <th></th>
   </tr>
-  
 <% @deals.each do |deal| %>
   <tr>
     <td><%= deal.title %></td>
     <td><%= deal.description %></td>
     <td><%= deal.url %></td>
-
     <br>
-     
       <br>
     <!--<td><%= link_to 'Show', deal %></td>-->
     <% if user_signed_in? %>
-      <% if current_user.has_role? :agent, :admin %>
+      <% if current_user.has_role? :agent %>
         <td><%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <br>
       <hr>
@@ -39,7 +34,7 @@
 <br />
 
 <% if user_signed_in? %>
-    <% if current_user.has_role? :agent, :admin %>
+    <% if current_user.has_role? :agent %>
        <%= link_to 'Edit a Deal', edit_deal_path(deal), :class => "btn btn-success", :style => "color:white;" %>
        <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %>
        <%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %>
