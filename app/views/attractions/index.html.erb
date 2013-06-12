@@ -13,6 +13,7 @@
     <td><%= attraction.country %></td>
     <td><%= link_to 'Map it', attraction_map_index_path %></td>
 
+
   <% if user_signed_in? %>
       <% if current_user.has_role? :agent, :admin %>
         <%= link_to 'Edit an Attraction', edit_attraction_path(attraction), :class => "btn btn-success", :style => "color:white;" %>

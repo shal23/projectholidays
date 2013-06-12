@@ -15,29 +15,20 @@
 
          <li></i><%= link_to "<i class='icon-pencil'></i>".html_safe, new_enquiry_path, :alt => "Pencil", :title => "Contact", :class => "nav_icon" %></li>
 
-         <li></i><%= link_to "<i class='icon-off'></i>".html_safe, new_user_session_path, :alt => "Off", :title => "Login/Sign up", :class => "nav_icon" %></li>
 
     <% if user_signed_in? %>
 
-          <li></i><%= link_to destroy_user_session_path, :alt => "Off", :title => "Logout", :class => "nav_icon", :method => :delete do %><i class='icon-off'></i><% end %></li>
+          <li></i><%= link_to "<i class='icon-off'></i>".html_safe, destroy_user_session_path, :alt => "Off", :title => "Logout", :class => "nav_icon", :method => :delete %></li>
+    <% else %> 
+           <li></i><%= link_to "<i class='icon-off'></i>".html_safe, new_user_session_path, :alt => "Off", :title => "Login/Sign up", :class => "nav_icon" %></li>
+    <% end %> 
 
-
-        <li></i><%= link_to "<i class='icon-edit-sign'></i>".html_safe,  edit_user_registration_path, :alt => "Edit", :title => "Edit Account", :class => "nav_icon" %></li>
-
-        <li></i><%= link_to "<i class='icon-pencil'></i>".html_safe, new_enquiry_path, :alt => "Pencil", :title => "Contact", :class => "nav_icon" %></li>
-
-         <li></i><%= link_to "<i class='icon-star-empty'></i>".html_safe,  events_path, :alt => "Events", :title => "Events", :class => "nav_icon" %></li>
-
-          <li></i><%= link_to "<i class='icon-heart'></i>".html_safe, deals_path, :alt => "Heart", :title => "Deals", :class => "nav_icon" %></li>
-
-    <% else %>   
-  <% end %>
     <% if user_signed_in? %>
         <% if current_user.has_role? :admin %>
             <li></i><%= link_to "<i class='icon-user-md'></i>".html_safe, users_path, :alt => "Admin", :title => "Admin", :class => "nav_icon" %>
           </li>
-      
-      <% end %>  
+       <% end %>
+<% end %>
     </ul>
   </div>
-<% end %>
+
