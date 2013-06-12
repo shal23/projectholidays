@@ -14,31 +14,31 @@
             <div class="active item">
                 <%= image_tag "chittrakoot_falls.jpg" %>
                 <div class="carousel-caption">
-                    <h5>Falls</h5>
+                    <h5>Chittrakoot Falls, Chhattisgarh</h5>
                 </div>
             </div>
             <div class="item">
                 <%= image_tag "gulmarg.jpg" %>
                  <div class="carousel-caption">
-                    <h5>Skiing</h5>
+                    <h5>Skiing in Gulmarg, Kashmir</h5>
                 </div>
             </div>
             <div class="item">
                 <%= image_tag "kutch.jpg" %>
                  <div class="carousel-caption">
-                    <h5>Village</h5>
+                    <h5>Village in Kutch, Gujarat</h5>
                 </div>
             </div>
             <div class="item">
                 <%= image_tag "ladakh_nubra.jpg" %>
                  <div class="carousel-caption">
-                    <h5>Valley</h5>
+                    <h5>Nubhra Valley, Ladakh</h5>
                 </div>
             </div>
             <div class="item">
                 <%= image_tag "taj-mahal.jpg" %>
                  <div class="carousel-caption">
-                    <h5>Taj Mahal</h5>
+                    <h5>Taj Mahal, Agra</h5>
                 </div>
             </div>
             <div class="item">
@@ -67,15 +67,13 @@
     <br>
     <hr>
     <br>
-<center><h3><b>Upcoming Events</b></h3></center>
+<center><h2><b>Upcoming Events</b></h2></center>
 <br>
 <table class = "table table-striped">
 <% @events.each do |event| %>
 
- <h6><%= event.name %></h6>
-    
-    <hr>
-    <p><%= truncate_html event.description.to_s.html_safe, :length => 20 %>...
+ <h5><%= event.name %></h5>
+    <p><%= truncate_html event.description.to_s.html_safe, :length => 50 %>...
     <%= link_to "Read more", event_path(event) %></p>
   <br>
 </table>
@@ -84,17 +82,18 @@
 <br>
 <hr>
 <br>
-<center><h3><b>Special Offers</b></h3></center>
+<center><h2><b>Special Offers</b></h2></center>
 <br>
 <table class="table table-striped">
 
     <% @deals.each do |deal| %>
 
-    <h6><%= deal.title %></h6>
+    <h5><%= deal.title %></h5>
 
-        <hr>
-        <p><%= truncate_html deal.description.html_safe, :length => 20 %>...
+        <p><%= truncate_html deal.description.html_safe, :length => 50 %>...
             <%= link_to "Read more", deal_path(deal) %></p>
+
+            <hr>
 
 </table>
 
