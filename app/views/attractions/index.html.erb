@@ -1,27 +1,28 @@
-<h3>Listing attractions</h3>
+<br>
+<br>
+<h3>Top Attractions</h3>
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
-    <th>State</th>
-    <th>Country</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    
 
 <% @attractions.each do |attraction| %>
   <tr>
     <td><%= attraction.name %></td>
     <td><%= attraction.state %></td>
     <td><%= attraction.country %></td>
-    <td><%= link_to 'Show', attraction %></td>
-    <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-    <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Map it', attraction_map_index_path %></td>
+
+  <% if user_signed_in? %>
+      <% if current_user.has_role? :agent, :admin %>
+        <%= link_to 'Edit an Attraction', edit_attraction_path(attraction), :class => "btn btn-success", :style => "color:white;" %>
+        <%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Create a new Attraction', new_attraction_path, :class => "btn btn-success" %>
+    
   </tr>
-<% end %>
+    <% end %>
+  <% end %>
+  <% end %>
+
 </table>
-
 <br />
-
-<%= link_to 'New Attraction', new_attraction_path %>

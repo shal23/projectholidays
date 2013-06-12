@@ -11,9 +11,6 @@ gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "capybara", ">= 2.0.3", :group => :test
 gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
-gem "guard-bundler", ">= 1.0.0", :group => :development
-gem "guard-rails", ">= 0.4.0", :group => :development
-gem "guard-rspec", ">= 2.5.2", :group => :development
 gem "rb-inotify", ">= 0.9.0", :group => :development, :require => false
 gem "rb-fsevent", ">= 0.9.3", :group => :development, :require => false
 gem "rb-fchange", ">= 0.0.6", :group => :development, :require => false
@@ -34,6 +31,6 @@ gem "jquery-fileupload-rails"
 gem 'event-calendar', :require => 'event_calendar'
 gem 'tinymce-rails'
 gem 'will_paginate', '~> 3.0'
-gem "friendly_id"
 gem "gmaps4rails"
 gem 'country_select' 
+gem 'shoulda'

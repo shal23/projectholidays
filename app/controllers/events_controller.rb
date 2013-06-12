@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
   	@events = Event.all
+    @json = @events.to_gmaps4rails
 
   	respond_to do |format|
       format.html # index.html.erb

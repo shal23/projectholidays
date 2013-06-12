@@ -163,7 +163,7 @@
   bottom: 0;
   left: 0;
   padding: 15px;
-  background: black;
+  background: white;
   background: rgba(0, 0, 0, 0.75);
 }
 
@@ -258,4 +258,13 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
   font-family: Arial, Calibri;
+}
+
+
+body { 
+  
+  background-image: none;
+  background-repeat: repeat;
+
+  font-family: 'Special Elite', 'Roboto Slab', 'Noto Serif', serif, times;
 }

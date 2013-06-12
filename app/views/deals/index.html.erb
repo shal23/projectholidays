@@ -1,4 +1,10 @@
+<br>
+<br>
 <h3>Deals</h3>
+
+<center><%= image_tag "taj_mahal.jpg", :class => "img-polaroid" %></center>
+<br>
+<br>
 
 <table class="table table-striped">
   <tr>
@@ -15,12 +21,39 @@
     <td><%= deal.title %></td>
     <td><%= deal.description %></td>
     <td><%= deal.url %></td>
+
+    <br>
+     <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=156481254525303";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+      <div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+      <br>
     <!--<td><%= link_to 'Show', deal %></td>-->
-   
-
-<% end %>
+    <% if user_signed_in? %>
+      <% if current_user.has_role? :agent, :admin %>
+        <td><%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <br>
+      <hr>
+      <br>
+  </tr>
 </table>
-
+    <% end %>
+  <% end %>
 <br />
- <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %>
 
+<% if user_signed_in? %>
+    <% if current_user.has_role? :agent, :admin %>
+       <%= link_to 'Edit a Deal', edit_deal_path(deal), :class => "btn btn-success", :style => "color:white;" %>
+       <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %>
+       <%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      <% end %>
+    <% end %>
+  <% end %>

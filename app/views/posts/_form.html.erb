@@ -11,13 +11,18 @@
   </div>
   <% end %>
 
-  <div class="form-inputs">
+  <div class="field">
     <%= f.input :name %>
-    <%= f.input :title %>
-    <%= f.input :content, :input_html => { :rows => 3, :class => "tinymce" }  %>
+  </div>
+  <div class="field">
+    <%= f.input:title %>
+  </div>
+  <div class="field">
+    <%= f.input :content, :input_html => { :rows => 3, :class => "tinymce"} %>
+  
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="actions">
+    <%= f.submit :class => "btn btn-success", :style => "color:white;" %>
   </div>
 <% end %>

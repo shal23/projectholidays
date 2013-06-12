@@ -1,15 +1,11 @@
 <%= simple_form_for(@enquiry) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :email %>
     <%= f.input :subject %>
     <%= f.input :message, :as => :text, :input_html => { :class => "span3", :rows => 3}  %>
     <%= f.input :join_mailing_list %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
+  
 <% end %>

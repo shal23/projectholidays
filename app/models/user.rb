@@ -12,14 +12,13 @@ class User < ActiveRecord::Base
  
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :agent, :slug
-  
-  extend FriendlyId
-  friendly_id :name, use: :slugged
-end
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :agent
 
+  has_many :posts
+  
+end
   def add_role_to_user
     if self.agent == true
       self.add_role :agent
-  end
+    end
 end

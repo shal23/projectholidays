@@ -1,13 +1,17 @@
-<%= simple_form_for(@[@post, @post.comments.build]) do |f| %>
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :content %>
-    <%= f.association :post %>
+ <div class="form-inputs">
+  	<i class="icon-user"></i>
+    <%= f.input :name %><br/>
+
+    <i class="icon-comment"></i>
+    <%= f.input :content %><br/>
+
+    <%= f.association :post %><br/>
   </div>
 
   <div class="form-actions">
-    <%= f.submit, :class => "btn btn-success" %>
+    <%= f.button :submit %>
   </div>
 <% end %>
