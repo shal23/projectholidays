@@ -27,6 +27,7 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'truncate_html'
 gem 'carrierwave'
+gem "jquery-fileupload-rails"
 gem 'event-calendar', :require => 'event_calendar'
 gem 'tinymce-rails'
 gem 'will_paginate', '~> 3.0'
