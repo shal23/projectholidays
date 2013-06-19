@@ -1,5 +1,3 @@
-<br>
-<br>
 <h3>Events</h3>
 
 <p id="notice"><%= notice %></p>
@@ -20,16 +18,22 @@
   <%= @event.longitude %><%= @event.latitude %>
  </p>
 
-<%= gmaps4rails(@json) %>
-
-<p>
+ <p>
   <b>Description:</b>
   <%= @event.description %>
 </p>
 
 
+<%= gmaps4rails(@json) %>
+
+
+
 <br />
- 
+ <%= link_to 'Back', events_path %>
 <br>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+
+<% if user_signed_in? %>
+ 	<% if current_user.has_role? :admin %>
+		<%= link_to 'Edit', edit_event_path(@event) %> |
+	<% end %>
+<% end %>

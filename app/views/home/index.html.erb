@@ -57,38 +57,28 @@
     <p align="justify">There are many places in India to explore, it turns out to a never ending tour destinations. Some places are more demanding and some are less. Explore the various prime and most popular tourism hotspots, historical monuments, Himalayan ranges, Sea beaches, Culture, religious Pilgrim interests, hill stations, etc. with dedicated tour expert and guide of Annonline and keep your memory alive for lifetime. Enjoy different and most popular India tour plan with relaxing and save time as well as money by our friendly services.</p>
     <br>
     <br>
-<p>Check out the most popular <a href="/attractions/index">destinations</a></hp>
+<p>Check out the most popular <a href="/attractions/">destinations</a></hp>
     <br>
     <hr>
     <br>
 <center><h2><b>Upcoming Events</b></h2></center>
-<br>
-<table class = "table table-striped">
-<% @events.each do |event| %>
+    <table class = "table table-striped">
+        <% @events.each do |event| %>
 
- <h5><%= event.name %></h5>
-    <p><%= truncate_html event.description.to_s.html_safe, :length => 50 %>...
-    <%= link_to "Read more", event_path(event) %></p>
-  <br>
-</table>
-
+            <h5><%= event.name %></h5>
+                <p><%= truncate_html event.description.to_s.html_safe, :length => 50 %>...
+                <%= link_to "Read more", event_path(event) %></p>
+    </table>
 <% end %>
 <br>
 <hr>
 <br>
 <center><h2><b>Special Offers</b></h2></center>
-<br>
-<table class="table table-striped">
-
-    <% @deals.each do |deal| %>
-
-    <h5><%= deal.title %></h5>
-
-        <p><%= truncate_html deal.description.html_safe, :length => 50 %>...
-            <%= link_to "Read more", deal_path(deal) %></p>
-
+    <table class="table table-striped">
+        <% @deals.each do |deal| %>
+            <h5><%= deal.title %></h5>
+                <p><%= truncate_html deal.description.html_safe, :length => 50 %>...
+                <%= link_to "Read more", deal_path(deal) %></p>
             <hr>
-
-</table>
-
+    </table>
 <% end %>

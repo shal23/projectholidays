@@ -4,10 +4,7 @@
   <%= will_paginate @posts %>
 </div>
 <br>
-<br>
-<br>
 <h3>Share your experience</h3>
-<br>
 <br>
 
 <% @posts.each do |post| %>
@@ -32,7 +29,8 @@
       <hr>
       <% if user_signed_in? %>
         <% if current_user.has_role? :admin %>
-          <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info", :style => "color:white;" %>
+          <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info", :style => "color:white;" %> |
+          <%= link_to 'Destroy',post, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
   <% end %>
 <% end %>

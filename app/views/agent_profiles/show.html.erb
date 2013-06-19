@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag(@user_profile.image_url) if @user_profile.image? %>
+
+<%= image_tag agent_profile.avatar_url(:thumb) if agent_profile.avatar? %>
 
 <p>
   <b>Name:</b>
@@ -29,7 +30,7 @@
 
 <p>
   <b>Image:</b>
-  <%= @agent_profile.image %>
+  <%= @agent_profile.avatar %>
 </p>
 
 

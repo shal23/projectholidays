@@ -1,29 +1,23 @@
-<br>
-<br>
 <h3>Top Attractions</h3>
 
 <table class="table table-striped">
   <tr>
-    
-
-<% @attractions.each do |attraction| %>
-  <tr>
-    <td><%= attraction.name %></td>
-    <td><%= attraction.state %></td>
-    <td><%= attraction.country %></td>
-    <td><%= link_to 'Map it', attraction_map_index_path %></td>
-
-
-  <% if user_signed_in? %>
-      <% if current_user.has_role? :agent %>
-        <%= link_to 'Edit an Attraction', edit_attraction_path(attraction), :class => "btn btn-success", :style => "color:white;" %>
-        <%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Create a new Attraction', new_attraction_path, :class => "btn btn-success" %>
-    
+    <% @attractions.each do |attraction| %>
+     
+        <td><%= attraction.name %></td>
+        <td><%= attraction.state %></td>
+        <td><%= attraction.country %></td>
+        <td><%= link_to 'Map it', attraction_map_index_path %></td>
+        <br>
+          <% if user_signed_in? %>
+              <% if current_user.has_role? :admin %>
+                <%= link_to 'Edit an Attraction', edit_attraction_path(attraction), :class => "btn btn-success", :style => "color:white;" %> |
+                <%= link_to 'Create a new Attraction', new_attraction_path, :class => "btn btn-success" %> |
+                <%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %>               
   </tr>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
-  <% end %>
 
 </table>
 <br />

@@ -1,4 +1,4 @@
-<%= simple_form_for(@agent_profile) do |f| %>
+<%= simple_form_for(@agent_profile) :html => {:multipart => true} do |f| %>
   <%= f.error_notification %>
 
   
@@ -6,7 +6,9 @@
     <%= f.input :company_name %>
     <%= f.input :company_address %>
     <%= f.input :company_url %>
-    <%= f.input :image, :as => :file %>
+    <%= f.input :avatar, :as => :file %>
+    <%= f.label :remote_avatar_url, "or image URL" %><br />
+    <%= f.text_field :remote_avatar_url %>
     <%= f.input :about %>
 
     <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>

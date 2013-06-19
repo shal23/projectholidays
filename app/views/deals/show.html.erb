@@ -15,6 +15,11 @@
   <%= @deal.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_deal_path(@deal) %> |
+<br>
 <%= link_to 'Back', deals_path %>
+
+<% if user_signed_in? %>
+ 	<% if current_user.has_role? :admin %>
+		<%= link_to 'Edit', edit_deal_path(@deal) %> 
+	<% end %>
+<% end %>

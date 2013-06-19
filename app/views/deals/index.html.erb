@@ -1,9 +1,7 @@
 <br>
-<br>
 <h3>Deals</h3>
 
 <center><%= image_tag "taj_mahal.jpg", :class => "img-polaroid" %></center>
-<br>
 <table class="table table-striped">
   <tr>
     <th>Title</th>
@@ -22,7 +20,7 @@
       <br>
     <!--<td><%= link_to 'Show', deal %></td>-->
     <% if user_signed_in? %>
-      <% if current_user.has_role? :agent %>
+      <% if current_user.has_role? :admin %>
         <td><%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <br>
       <hr>
@@ -31,13 +29,11 @@
 </table>
     <% end %>
   <% end %>
-<br />
-
 <% if user_signed_in? %>
-    <% if current_user.has_role? :agent %>
-       <%= link_to 'Edit a Deal', edit_deal_path(deal), :class => "btn btn-success", :style => "color:white;" %>
-       <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %>
-       <%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% if current_user.has_role? :admin %>
+        <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %> |
+        <%= link_to 'Edit a Deal', edit_deal_path(deal), :class => "btn btn-success", :style => "color:white;" %> |
+        <%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %>
 
       <% end %>
     <% end %>

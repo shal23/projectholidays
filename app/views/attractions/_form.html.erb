@@ -1,11 +1,11 @@
 <%= simple_form_for(@attraction) do |f| %>
   <%= f.error_notification %>
-  <% if @deal.errors.any? %>
+  <% if @attraction.errors.any? %>
   	<div id="errorExplanation">
-    	<h2><%= pluralize(@deal.errors.count, "error") %> prohibited
-        this deal from being saved:</h2>
+    	<h2><%= pluralize(@attraction.errors.count, "error") %> prohibited
+        this attraction from being saved:</h2>
     		<ul>
-    <% @deal.errors.full_messages.each do |msg| %>
+    <% @attraction.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>

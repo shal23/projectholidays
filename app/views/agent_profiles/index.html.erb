@@ -1,13 +1,13 @@
-<h3>Listing agent_profiles</h3>
+<h3>Listing agent profiles</h3>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Company name</th>
     <th>Company address</th>
     <th>Company url</th>
     <th>About</th>
-    <th>Image</th>
+    <th>Avatar</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,7 +20,7 @@
     <td><%= agent_profile.company_address %></td>
     <td><%= agent_profile.company_url %></td>
     <td><%= truncate(agent_profile.about) %></td>
-    <td><%= agent_profile.image %></td>
+    <td><%= agent_profile.avatar_url %></td>
     <td><%= link_to 'Show', agent_profile %></td>
     <td><%= link_to 'Edit', edit_agent_profile_path(agent_profile) %></td>
     <td><%= link_to 'Destroy', agent_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,8 +28,4 @@
 <% end %>
 </table>
 
-<br />
-
-<!--<%= link_to 'New Agent profile', new_agent_profile_path %>-->
-
-<%= link_to "Admin". admin_index_path %>
+<%= link_to root_path %>

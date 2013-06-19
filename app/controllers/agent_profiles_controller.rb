@@ -44,7 +44,7 @@ class AgentProfilesController < ApplicationController
 
     respond_to do |format|
       if @agent_profile.save
-        format.html { redirect_to @agent_profile, notice: 'Agent profile was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Agent profile was successfully created.' }
         format.json { render json: @agent_profile, status: :created, location: @agent_profile }
       else
         format.html { render action: "new" }
@@ -56,7 +56,7 @@ class AgentProfilesController < ApplicationController
   # PUT /agent_profiles/1
   # PUT /agent_profiles/1.json
   def update
-    @agent_profile = AgentProfile.find(params[:id])
+    @agent_profile = AgentProfile.find(params[:Agent_profile_id])
 
     respond_to do |format|
       if @agent_profile.update_attributes(params[:agent_profile])
