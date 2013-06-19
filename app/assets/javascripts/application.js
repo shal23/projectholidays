@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require tinymce
-//= require 'carrierwave/orm/activerecord'
 //= require_tree .
