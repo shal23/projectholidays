@@ -29,12 +29,13 @@
 </table>
     <% end %>
   <% end %>
-<% if user_signed_in? %>
-    <% if current_user.has_role? :admin %>
-        <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %> |
-        <%= link_to 'Edit a Deal', edit_deal_path(deal), :class => "btn btn-success", :style => "color:white;" %> |
-        <%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-      <% end %>
+  <% if user_signed_in? %>
+      <% if current_user.has_role :agent %>
+        <%= link_to 'Edit an Event', edit_event_path(event), :class => "btn btn-success", :style => "color:white;" %> |
+        <%= link_to 'Create an Event', new_event_path, :class => "btn btn-success", :style => "color:white;" %> |
+        <%= link_to 'Destroy',event, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+       <% end %>
     <% end %>
   <% end %>

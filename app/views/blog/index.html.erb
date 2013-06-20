@@ -11,7 +11,7 @@
  <h5><%= post.name %></h5>
   <h6><%= post.title %></h6>
     <p>posted on <%= post.created_at.strftime("%e, %b, %Y") %></p>
-    <p><%= truncate_html post.content.html_safe, :length => 20 %>...
+    <p><%= truncate_html post.content.html_safe, :length => 100 %>...
   <%= link_to "Read more", post_path(post) %></p>
   <br>
      <div id="fb-root"></div>

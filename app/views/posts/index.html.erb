@@ -15,7 +15,7 @@
   <tr>
     <td><%= post.name %></td>
     <td><%= post.title %></td>
-    <td><%= post.content %></td>
+    <td><%= post.content.html_safe %></td>
      <td><%= post.created_at.strftime("%e, %b, %Y") %></td>
     <!--<td><%= link_to 'Show', post %></td>-->
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
