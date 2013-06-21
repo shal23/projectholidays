@@ -1,11 +1,11 @@
 <%= simple_form_for(@enquiry) do |f| %>
   <%= f.error_notification %>
 
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :subject %>
-    <%= f.input :message, :as => :text, :input_html => { :class => "span3", :rows => 3}  %>
-    <%= f.input :join_mailing_list %>
-    <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
-  
+	    <%= f.input :name %>
+	    <%= f.input :email %>
+	    <%= f.input :subject %>
+	    <%= f.input :message, :as => :text, :input_html => { :class => "span3", :rows => 3}  %>
+	    <%= f.input :join_mailing_list %>
+	    <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
+	  
 <% end %>

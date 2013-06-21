@@ -1,39 +1,32 @@
 <h3>Events</h3>
+  <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+  <p>
+    <b>Name:</b>
+    <%= @event.name %>
+  </p>
+  <p>
+    <b>Start Date:</b>
+    <%= @event.start_at %>
+  </p>
+  <p>
+    <b>Address:</b>
+    <%= @event.address %>
+    <%= @event.longitude %><%= @event.latitude %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%= @event.description %>
+  </p>
 
-<p>
-  <b>Name:</b>
-  <%= @event.name %>
-</p>
+  <%= gmaps4rails(@json) %>
 
-<p>
-  <b>Start Date:</b>
-  <%= @event.start_at %>
-</p>
+  <br />
+    <%= link_to 'Back', events_path %>
+  <br>
 
-<p>
-  <b>Address:</b>
-  <%= @event.address %>
-  <%= @event.longitude %><%= @event.latitude %>
- </p>
-
- <p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
-
-
-<%= gmaps4rails(@json) %>
-
-
-
-<br />
- <%= link_to 'Back', events_path %>
-<br>
-
-<% if user_signed_in? %>
- 	<% if current_user.has_role? :admin %>
-		<%= link_to 'Edit', edit_event_path(@event) %> |
-	<% end %>
-<% end %>
+    <% if user_signed_in? %>
+     	<% if current_user.has_role? :admin %>
+    		<%= link_to 'Edit', edit_event_path(@event) %> |
+    	<% end %>
+    <% end %>

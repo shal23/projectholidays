@@ -1,31 +1,30 @@
 <h3>Listing agent profiles</h3>
 
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Company name</th>
-    <th>Company address</th>
-    <th>Company url</th>
-    <th>About</th>
-    <th>Avatar</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Company name</th>
+            <th>Company address</th>
+            <th>Company url</th>
+            <th>About</th>
+            <th>Avatar</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
 
-<% @agent_profiles.each do |agent_profile| %>
-  <tr>
-    <td><%= agent_profile.name %></td>
-    <td><%= agent_profile.company_name %></td>
-    <td><%= agent_profile.company_address %></td>
-    <td><%= agent_profile.company_url %></td>
-    <td><%= truncate(agent_profile.about) %></td>
-    <td><%= agent_profile.avatar_url %></td>
-    <td><%= link_to 'Show', agent_profile %></td>
-    <td><%= link_to 'Edit', edit_agent_profile_path(agent_profile) %></td>
-    <td><%= link_to 'Destroy', agent_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
+        <% @agent_profiles.each do |agent_profile| %>
+        <tr>
+            <td><%= agent_profile.name %></td>
+            <td><%= agent_profile.company_name %></td>
+            <td><%= agent_profile.company_address %></td>
+            <td><%= agent_profile.company_url %></td>
+            <td><%= truncate(agent_profile.about) %></td>
+            <td><%= agent_profile.avatar_url %></td>
+            <td><%= link_to 'Show', agent_profile %></td>
+            <td><%= link_to 'Edit', edit_agent_profile_path(agent_profile) %></td>
+            <td><%= link_to 'Destroy', agent_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </table>
 <%= link_to root_path %>

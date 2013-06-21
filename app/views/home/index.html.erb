@@ -1,84 +1,78 @@
-<br>
-<br>
-    <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-        </ol>
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-            <div class="active item">
-                <%= image_tag "chittrakoot_falls.jpg" %>
-                <div class="carousel-caption">
-                    <h5>Chittrakoot Falls, Chhattisgarh</h5>
+      <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="active item">
+                    <%= image_tag "chittrakoot_falls.jpg" %>
+                    <div class="carousel-caption">
+                        <h5>Chittrakoot Falls, Chhattisgarh</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <%= image_tag "gulmarg.jpg" %>
-                 <div class="carousel-caption">
-                    <h5>Skiing in Gulmarg, Kashmir</h5>
+                <div class="item">
+                    <%= image_tag "gulmarg.jpg" %>
+                     <div class="carousel-caption">
+                        <h5>Skiing in Gulmarg, Kashmir</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <%= image_tag "kutch.jpg" %>
-                 <div class="carousel-caption">
-                    <h5>Village in Kutch, Gujarat</h5>
+                <div class="item">
+                    <%= image_tag "kutch.jpg" %>
+                     <div class="carousel-caption">
+                        <h5>Village in Kutch, Gujarat</h5>
+                    </div>
                 </div>
-            </div>
-           
-            <div class="item">
-                <%= image_tag "taj-mahal.jpg" %>
-                 <div class="carousel-caption">
-                    <h5>Taj Mahal, Agra</h5>
+               
+                <div class="item">
+                    <%= image_tag "taj-mahal.jpg" %>
+                     <div class="carousel-caption">
+                        <h5>Taj Mahal, Agra</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <%= image_tag "sea_link.jpg" %>
-                 <div class="carousel-caption">
-                    <h5>Sea Link, Mumbai</h5>
+                <div class="item">
+                    <%= image_tag "sea_link.jpg" %>
+                     <div class="carousel-caption">
+                        <h5>Sea Link, Mumbai</h5>
+                    </div>
                 </div>
-            </div>
 
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div>
-
-    <br>
-<hr>
-<br>
-<center><h2>Why you should Holiday in India ??</h2></center>
-    <br>
-    <p align="justify">India has a mixed culture of art, religion and philosophy. It accepts people from all over the world with her secularism and culture, which keeps it unique and most favorable tourist destination. Its three sides surrounded by water of Arabian Sea, Bay of Bengal and India Ocean which gift beautiful beaches in its surrounding. The Long Himalayan Ranges gifts many hill stations to relax and enjoy the beauty of nature. The Historical Monuments describe the uniqueness of India History carries a rich cultural legacy. The symbol of true love, Seven Wonders of the World "Taj Mahal" exhibits unconditional LOVE and reflects Indian heart. Who says brown is the dominant color of the desert can explore the White, Brown and Cold Mountain Desert in India. </p>
-    <br>
-    <p align="justify">There are many places in India to explore, it turns out to a never ending tour destinations. Some places are more demanding and some are less. Explore the various prime and most popular tourism hotspots, historical monuments, Himalayan ranges, Sea beaches, Culture, religious Pilgrim interests, hill stations, etc. with dedicated tour expert and guide of Annonline and keep your memory alive for lifetime. Enjoy different and most popular India tour plan with relaxing and save time as well as money by our friendly services.</p>
-    <br>
-    <br>
-<p>Check out the most popular <a href="/attractions/">destinations</a></hp>
-    <br>
-    <hr>
-    <br>
-<center><h2><b>Upcoming Events</b></h2></center>
-    <table class = "table table-striped">
-        <% @events.each do |event| %>
-
-            <h5><%= event.name %></h5>
-                <p><%= truncate_html event.description.to_s.html_safe, :length => 50 %>...
-                <%= link_to "Read more", event_path(event) %></p>
-    </table>
-<% end %>
-<br>
-<hr>
-<br>
-<center><h2><b>Special Offers</b></h2></center>
-    <table class="table table-striped">
-        <% @deals.each do |deal| %>
-            <h5><%= deal.title %></h5>
-                <p><%= truncate_html deal.description.html_safe, :length => 50 %>...
-                <%= link_to "Read more", deal_path(deal) %></p>
+                    <!-- Carousel nav -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
+            <br>
             <hr>
-    </table>
-<% end %>
+            <br>
+            <center><h2>Why you should Holiday in India ??</h2></center>
+                <p align="justify">India has a mixed culture of art, religion and philosophy. It accepts people from all over the world with her secularism and culture, which keeps it unique and most favorable tourist destination. Its three sides surrounded by water of Arabian Sea, Bay of Bengal and India Ocean which gift beautiful beaches in its surrounding. The Long Himalayan Ranges gifts many hill stations to relax and enjoy the beauty of nature. The Historical Monuments describe the uniqueness of India History carries a rich cultural legacy. The symbol of true love, Seven Wonders of the World "Taj Mahal" exhibits unconditional LOVE and reflects Indian heart. Who says brown is the dominant color of the desert can explore the White, Brown and Cold Mountain Desert in India. </p>
+                <p align="justify">There are many places in India to explore, it turns out to a never ending tour destinations. Some places are more demanding and some are less. Explore the various prime and most popular tourism hotspots, historical monuments, Himalayan ranges, Sea beaches, Culture, religious Pilgrim interests, hill stations, etc. with dedicated tour expert and guide of Annonline and keep your memory alive for lifetime. Enjoy different and most popular India tour plan with relaxing and save time as well as money by our friendly services.</p>
+                <br>
+                <br>
+                <p>Check out the most popular <a href="/attractions/">destinations</a></hp>
+                <br>
+                <hr>
+                <br>
+            <center><h2><b>Upcoming Events</b></h2></center>
+                <table class = "table table-striped">
+                    <% @events.each do |event| %>
+                         <h5><%= event.name %></h5>
+                            <p><%= truncate_html event.description.to_s.html_safe, :length => 50 %>...
+                            <%= link_to "Read more", event_path(event) %></p>
+                </table>
+            <% end %>
+            <br>
+            <hr>
+            <br>
+            <center><h2><b>Special Offers</b></h2></center>
+                <table class="table table-striped">
+                    <% @deals.each do |deal| %>
+                        <h5><%= deal.title %></h5>
+                            <p><%= truncate_html deal.description.html_safe, :length => 50 %>...
+                            <%= link_to "Read more", deal_path(deal) %></p>
+                        <hr>
+                </table>
+        <% end %>

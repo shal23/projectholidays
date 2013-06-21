@@ -1,38 +1,36 @@
-<br>
-<br>
-<div class="pull-right">
-  <%= will_paginate @posts %>
-</div>
-<br>
-<h3>Share your experience</h3>
-<br>
-
-<% @posts.each do |post| %>
- <h5><%= post.name %></h5>
-  <h6><%= post.title %></h6>
-    <p>posted on <%= post.created_at.strftime("%e, %b, %Y") %></p>
-    <p><%= truncate_html post.content.html_safe, :length => 100 %>...
-  <%= link_to "Read more", post_path(post) %></p>
+  <div class="pull-right">
+    <%= will_paginate @posts %>
+  </div>
   <br>
-     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=156481254525303";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <h3>Share your experience</h3>
+  <br>
 
-      <div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
-      <br>
-      <hr>
-      <% if user_signed_in? %>
-        <% if current_user.has_role? :admin %>
-          <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info", :style => "color:white;" %> |
-          <%= link_to 'Destroy',post, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+    <% @posts.each do |post| %>
+      <h5><%= post.name %></h5>
+      <h6><%= post.title %></h6>
+        <p>posted on <%= post.created_at.strftime("%e, %b, %Y") %></p>
+        <p><%= truncate_html post.content.html_safe, :length => 100 %>...
+        <%= link_to "Read more", post_path(post) %></p>
+  <br>
+      <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=156481254525303";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="arial">
+        </div>
+        <br>
+        <hr>
+          <% if user_signed_in? %>
+            <% if current_user.has_role? :admin %>
+              <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info", :style => "color:white;" %> |
+              <%= link_to 'Destroy',post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          <% end %>
   <% end %>
-<% end %>
-
 <%= link_to 'Create a Post', new_post_path, :class => "btn btn-success", :style => "color:white;" %>

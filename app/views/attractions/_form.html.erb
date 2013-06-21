@@ -1,20 +1,18 @@
 <%= simple_form_for(@attraction) do |f| %>
-  <%= f.error_notification %>
-  <% if @attraction.errors.any? %>
-  	<div id="errorExplanation">
-    	<h2><%= pluralize(@attraction.errors.count, "error") %> prohibited
-        this attraction from being saved:</h2>
-    		<ul>
-    <% @attraction.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
+    <%= f.error_notification %>
+      <% if @attraction.errors.any? %>
+  	       <div id="errorExplanation">
+    	       <h2><%= pluralize(@attraction.errors.count, "error") %> prohibited this attraction from being saved:</h2>
+    		        <ul>
+                  <% @attraction.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+          </div>
+      <% end %>
 
-    <%= f.input :name %>
-    <%= f.input :state %>
-    <%= f.input :country %>
-    <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
- 
-<% end %>
+            <%= f.input :name %>
+            <%= f.input :state %>
+            <%= f.input :country %>
+            <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
+  <% end %>

@@ -24,6 +24,13 @@
   font-family: Condiment, cursive;
 }
 
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  color: white; 
+  text-decoration: bold;
+  background-color: transparent;
+}
+
 
 
 
@@ -267,4 +274,7 @@ body {
   background-repeat: repeat;
 
   font-family: 'Special Elite', 'Roboto Slab', 'Noto Serif', serif, times;
+  font-size: 15px;
+  line-height: 20px;
+  color: #2c3e50;
 }

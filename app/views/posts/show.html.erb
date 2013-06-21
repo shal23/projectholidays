@@ -4,22 +4,17 @@
   <b>Name:</b>
   <%= @post.name %>
 </p>
-
 <p>
   <b>Title:</b>
   <%= @post.title %>
 </p>
-
 <p>
   <b>Content:</b>
   <%= @post.content %>
 </p>
-
- 
 <h3>Comments</h3>
 <%= render @post.comments %>
 <br>
- 
 <h6>Leave a comment:</h6>
 <%= render "comments/form" %>
  

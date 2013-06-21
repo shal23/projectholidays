@@ -1,21 +1,18 @@
-<%= simple_form_for(@deal) do |f| %>
-  <%= f.error_notification %>
-  <% if @deal.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@deal.errors.count, "error") %> prohibited
-        this deal from being saved:</h2>
-    <ul>
-    <% @deal.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
+  <%= simple_form_for(@deal) do |f| %>
+      <%= f.error_notification %>
+        <% if @deal.errors.any? %>
+          <div id="errorExplanation">
+            <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+              <ul>
+                <% @deal.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+          </div>
+        <% end %>
+
+            <%= f.input :title %>
+            <%= f.input :url %>
+            <%= f.input :description %>  
+            <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
   <% end %>
-
-    <%= f.input :title %>
-    <%= f.input :url %>
-    <%= f.input :description %>  
-    <%= f.submit "Submit", :class => "btn btn-success", :style => "color:white;" %>
-
-<% end %>
-

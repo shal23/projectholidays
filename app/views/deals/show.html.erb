@@ -4,22 +4,19 @@
   <b>Title:</b>
   <%= @deal.title %>
 </p>
-
 <p>
   <b>Url:</b>
   <%= @deal.url %>
 </p>
-
 <p>
   <b>Description:</b>
   <%= @deal.description %>
 </p>
 
-<br>
 <%= link_to 'Back', deals_path %>
 
-<% if user_signed_in? %>
- 	<% if current_user.has_role? :admin %>
-		<%= link_to 'Edit', edit_deal_path(@deal) %> 
+	<% if user_signed_in? %>
+	 	<% if current_user.has_role? :admin %>
+			<%= link_to 'Edit', edit_deal_path(@deal) %> 
+		<% end %>
 	<% end %>
-<% end %>

@@ -1,23 +1,23 @@
 <h3>Comments</h3>
 
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <table class="table table-striped">
+      <tr>
+          <th>Name</th>
+          <th>Content</th>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
 
-<% @comments.each do |comment| %>
-  <tr>
-    <td><%= comment.name %></td>
-    <td><%= truncate(comment.content) %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment), :class => "btn btn-info" %></td>
-    <td><%= link_to 'Delete', :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <% @comments.each do |comment| %>
+      <tr>
+          <td><%= comment.name %></td>
+          <td><%= truncate(comment.content) %></td>
+          <td><%= link_to 'Show', comment %></td>
+          <td><%= link_to 'Edit', edit_comment_path(comment), :class => "btn btn-info" %></td>
+          <td><%= link_to 'Delete', :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </table>
 
 <%= link_to 'Submit', new_comment_path, :class => "btn btn-success", :style => "color:white;" %>
