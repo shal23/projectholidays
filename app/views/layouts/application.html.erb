@@ -11,7 +11,7 @@
           <%= yield(:head) %>
         </head>
         <body class="<%= controller_name %> <%= action_name %>">
-                <div class="container">
+                <div class="wrapper">
                   <div class="navbar navbar-static-top">
                     <nav class="navbar-inner">
                       <div class="container">
@@ -22,19 +22,15 @@
                 </div>
                   <div id="main" role="main">
                     <div class="container">
-                        
                             <%= render 'layouts/messages' %>
                             <%= yield %>
-                          
                     </div> <!--! end of .container -->
                   </div> <!--! end of #main --> 
-              
+                  <br>
                 <footer>
                   <%= render 'layouts/footer' %>
                   <%= yield :scripts %>
-                </footer>
-
-
+                </foote>
               <%= tinymce %>
         </body> 
     </html>                          
