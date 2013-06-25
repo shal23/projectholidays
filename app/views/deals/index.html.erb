@@ -6,34 +6,30 @@
             <th>Title</th>
             <th>Description</th>
             <th>Url</th>
-            <th></th>
-            <th></th>
-            <th></th>
         </tr>
+
         <% @deals.each do |deal| %>
         <tr>
             <td><%= deal.title %></td>
-            <td><%= deal.description %></td>
+            <td><%= deal.description.html_safe %></td>
             <td><%= deal.url %></td>
-            <br>
-            <br>
-            <!--<td><%= link_to 'Show', deal %></td>-->
+
           <% if user_signed_in? %>
             <% if current_user.has_role? :admin %>
               <td><%= link_to 'Destroy',deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <br>
-            <hr>
-            <br>
-        </tr>
-      </table>
-        <% end %>
-      <% end %>
-
+            <% end %>
+          <% end %>
           <% if user_signed_in? %>
             <% if current_user.has_role :agent %>
               <%= link_to 'Edit an Event', edit_event_path(event), :class => "btn btn-success", :style => "color:white;" %> |
               <%= link_to 'Create an Event', new_event_path, :class => "btn btn-success", :style => "color:white;" %> |
               <%= link_to 'Destroy',event, method: :delete, data: { confirm: 'Are you sure?' } %>
-           <% end %>
-        <% end %>
-      <% end %>
+        </tr>
+            <% end %>
+          <% end %>
+        <% end %>  
+      </table>
+      <br/>
+      <br>
+      <hr>
+      <br>
