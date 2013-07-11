@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require tinymce
+//= require coffee_script
 //= require_tree .
